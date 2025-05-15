@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+// Redirect to profile.php if already logged in
+if (isset($_SESSION['google_loggedin']) && $_SESSION['google_loggedin'] === true) {
+  header('Location: profile.php');
+  exit;
+}
+
 define('ALLOW_CONFIG_ACCESS', true);
 require_once 'config.php';
 
@@ -13,7 +20,6 @@ $login_url = $client->createAuthUrl();
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Login with Google</title>
 <style>
-  /* Reset some defaults */
   body, html {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
