@@ -3,7 +3,9 @@
 
 ```
 git clone https://github.com/govindersingh/google-login.git
+```
 
+```
 composer install
 ```
 
