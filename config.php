@@ -7,8 +7,8 @@ if (!defined('ALLOW_CONFIG_ACCESS')) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 $client = new Google_Client();
-$client->setAuthConfig('client_secret.json');
-$client->setRedirectUri('http://localhost/google-login/google-oauth.php');
+$client->setAuthConfig('client_secret.json'); // Path to your client_secret.json file
+$client->setRedirectUri('http://localhost:8000/google-oauth.php'); // Change this to your redirect URI
 $client->addScope("https://www.googleapis.com/auth/userinfo.email");
 $client->addScope("https://www.googleapis.com/auth/userinfo.profile");
 $client->setAccessType('offline');
